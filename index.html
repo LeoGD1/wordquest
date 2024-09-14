@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>keyword</title>
+    <script src="words.js" defer></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <input type="text" class="input">
+    <div class="juego">
+        <h1 class="h1">Adivina la palabra!</h1>
+        <p class="contador">Segundos: 
+            <span class="segundos"></span>
+
+        </p>
+        <div class="celdas"></div>
+        <div class="teclado"></div>
+    </div>
+    <div class="contenedor-resultados">
+        <div class="resultados">
+            <h3 class="resultados-h3">Tus resultados:</h3>
+            <p class="resultados-p">
+                Palabra adivinada:
+                <span class="palabra-secreta"></span>
+            </p>
+            <ul class="resultados-ul">
+                <li class="resultados-li">Tiempo: <span class="tiempo"></span></li>
+                <li class="resultados-li">Racha: <span class="racha"></span></li>
+                <li class="resultados-li">Mejor tiempo: <span class="mejor-tiempo">Proximamente</span></li>
+            </ul>
+            <button class="resultados-btn">Volver a jugar</button>
+        </div>
+    </div>
+    <div class="contenedor-perdiste">
+        <div class="perdiste">
+            <h3 class="perdiste-h3">Casi lo logras!</h3>
+            <button class="perdiste-btn">Volver a jugar</button>
+        </div>
+    </div>
+</body>
+</html>
