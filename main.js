@@ -13,6 +13,8 @@ const $time = document.querySelector('.tiempo');
 const $bestTime = document.querySelector('.mejor-tiempo');
 const $streak = document.querySelector('.racha');
 
+console.log(word);
+
 for(let i = 0; i < opportunities; i++) {
     gameBoard[i] = [opportunities];
     for (let j = 0; j < wordToArray.length; j++) {
@@ -60,6 +62,7 @@ let controlTime = false;
 let time = 0;
 let streak = 0;
 let bestTime = 0;
+
 
 
 $keycaps.forEach(keycap => {
@@ -110,9 +113,23 @@ $keycaps.forEach(keycap => {
             if(JSON.stringify(gameBoard[rowNumber]) == JSON.stringify(wordToArray)) {
                 win = true;
                 time = sec;
+
+                if(bestTime === 0) {
+                    bestTime = time;
+                }
+
+                if(time > bestTime) {
+                    bestTime = bestTime;
+                }
+
+                if(time < bestTime) {
+                    bestTime = time;
+                }
+
+
                 streak++;
                 
-                //$bestTime.textContent = bestTime + ' seg';
+                $bestTime.textContent = bestTime + ' seg';
                 $time.textContent = time + ' seg';
                 $streak.textContent = streak;
                 $palabraAdivinada.textContent = word;
@@ -167,7 +184,7 @@ function reloadGame() {
     wordToArray = word.split('');
     counterLetter = {};
 
-    //console.log(word);
+    console.log(word);
 }
 
 function countTime() {
